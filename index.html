@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Wisecube docs</title>
+        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href=".">Wisecube docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#wisecube-user-guide">Wisecube User Guide</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#become-a-beta-user">Become a Beta User</a></li>
+            <li><a href="#upload-and-manage-datasets">Upload and Manage Datasets</a></li>
+            <li><a href="#explore-datasets">Explore Datasets</a></li>
+            <li><a href="#install-python-libraries">Install Python Libraries</a></li>
+            <li><a href="#create-re-usable-executables">Create Re-usable Executables</a></li>
+            <li><a href="#build-and-run-visual-workflows">Build and Run Visual Workflows</a></li>
+            <li><a href="#track-all-your-related-artifacts-as-a-project">Track all your related artifacts as a Project</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="wisecube-user-guide">Wisecube User Guide</h1>
+<h3 id="overview">Overview</h3>
+<p>Wisecube is a full-stack AI platform that allows data scientists to manage datasets, explore them, create re-usable executables, build and run visual workflows that can train and publish models.</p>
+<h3 id="become-a-beta-user">Become a Beta User</h3>
+<p>Wisecube is invite only currently. Contact info@wisecube.ai for a beta invite to the Wisecube AI platform.</p>
+<h3 id="upload-and-manage-datasets">Upload and Manage Datasets</h3>
+<p>Data is the lifeblook of any AI application. Wisecube allows data scientists to upload datasets either as CSV files and also import data from S3 buckets and any open and accessible URI on the internet.</p>
+<ul>
+<li>Click on the Datasets Tab</li>
+<li>Click Create new Dataset</li>
+<li>Upload a file from your local computer </li>
+<li>The system should import the new dataset  </li>
+</ul>
+<h3 id="explore-datasets">Explore Datasets</h3>
+<p>Once the data has been imported as a dataset into the platform, you can then use your favorite Jupyter notebook environment to explore the dataset.
+Here is how you can start exploring the dataset that you just imported:</p>
+<ul>
+<li>Click on the Notebooks tab</li>
+<li>A new Notebook session should launch</li>
+<li>The datasets that are imported should be under ./nephos-core/resources/<resource-id></li>
+<li>You can find the resource-id of your dataset from the dataset list view.</li>
+<li>You should be able to load it up into a <a href="http://www.dask.org">dask</a> dataframe.</li>
+</ul>
+<h3 id="install-python-libraries">Install Python Libraries</h3>
+<p>Even though we have pre-loaded tons of popular data science libraries into Wisecube out of the box, There will be some times when we missed a few of your favorite ones. When you run into this situation there is an easy way to have them be installed into the Wiscube environment.</p>
+<ul>
+<li>Click on Libraries tab</li>
+<li>Click on 'New Libaries' button</li>
+<li>Select if you want to install a Single library or Multiple libraries at once.</li>
+<li>Enter the library you would like installed or upload a requirements file.</li>
+<li>Be sure to use the <a href="https://pip.readthedocs.io/en/1.1/requirements.html#requirements-file-format">pip requirements file format</a> to specify your library and its version.</li>
+</ul>
+<h3 id="create-re-usable-executables">Create Re-usable Executables</h3>
+<p>Once you have your notebook doing what you want to do, usually you want to package them into re-usable modules. In Wisecube we call these executables. There are a few different ways you can create executables. Executables can either be binary files or also can be <a href="https://papermill.readthedocs.io/en/latest/">papermill</a> based notebooks that take parameters. Either way all executables in Wisecube need to take named input and output arguments specified.</p>
+<ul>
+<li>Click on Executables tab</li>
+<li>Click on 'New Executable' Button</li>
+<li>If you are importing a <a href="https://papermill.readthedocs.io/en/latest/">papermill</a> based notebook you can simply upload it by clicking the Code tab.</li>
+<li>In this case Wisecube should automatically parse the parameters and set them up as arugments to the executable.</li>
+<li>You can give you executable a name and save them.</li>
+<li>In case you are trying to use a binary file, you can upload it as well.</li>
+<li>However you will have to register the input, output and string(flag) based arguments it takes.</li>
+</ul>
+<h3 id="build-and-run-visual-workflows">Build and Run Visual Workflows</h3>
+<p>Visual workflows are the heart of the Wisecube platform. It brings together the data and the re-usable executables you have registered. </p>
+<ul>
+<li>Click on the Workflows tab</li>
+<li>Open the Datasets/Executable side drawer by clicking on the Orange arrow on the right</li>
+<li>You should be able to drag and drop datasets and executables you need onto the workflow canvas.</li>
+<li>You can start building the worfklow by drawing arrows from datasets to executable input arguments.</li>
+<li>You can also start connecting the output of one executable as the input to a different executable.</li>
+<li>Wisecube will automatically ensure the names of these match up even if they are called different things.</li>
+<li>You can click on the 'Run' button to validate the workflow by quickly running it.</li>
+<li>You can open the 'Run Info' drawer on the  bottom to see the output of the running workflow</li>
+<li>Wisecube will start preparing your workflow to run and show you progress and status of the runs</li>
+</ul>
+<h3 id="track-all-your-related-artifacts-as-a-project">Track all your related artifacts as a Project</h3>
+<p>A common problem in AI projects is that there is usually not a good way to track and manage datasets, notebooks, executables and workflows all in one central location. This is exactly why we have the concept of Projects in the Wisecube platform. Here is how to create a Project and use it to track all relevant resources using it:</p>
+<ul>
+<li>Navigate to the Projects tab and click on the 'New Project' button</li>
+<li>Give it in a name and use it to track other metadata about the project and its requirements as well.</li>
+<li>Once you save the project, you can now start linking related resources to it.</li>
+<li>Click on the 'Link Resource' icon on the Project row itself.</li>
+<li>A dialog will open up that should allow you to select the kind of resource you want to link to it and search and link it to the Project.</li>
+<li>Once you selected the right resource type and name, click on the 'Link' button to finalize linking it.</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-10-04 05:36:39
+-->
